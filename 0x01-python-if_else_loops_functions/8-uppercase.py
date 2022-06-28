@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def uppecase(str):
+def uppercase(str):
     for character in str:
         temp = ord(character)
         if temp > 96 and temp < 123:

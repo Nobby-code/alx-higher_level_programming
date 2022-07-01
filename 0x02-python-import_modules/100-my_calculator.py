@@ -5,15 +5,15 @@ if __name__ == "__main__":
     from sys import argv
 
     my_args = argv[1:]
-    l = len(argv) - 1
+    arg_length = len(argv) - 1
     operators = ["+", "-", "*", "/"]
-    
-    if l != 3:
+
+    if arg_length != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     else:
         a = int(argv[1])
-        b = int(argv[3])             
+        b = int(argv[3])
 
         if argv[2] == "+":
             print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))

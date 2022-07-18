@@ -2,10 +2,11 @@
 
 import sys
 
+
 def safe_print_integer_err(value):
     """
     printing exception o stderr
-    
+
     """
     try:
         print("{:d}".format(value))

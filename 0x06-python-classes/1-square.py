@@ -6,4 +6,5 @@
 class Square:
     """Private member size initialized"""
     def __init__(self, size):
+        """Initialization of the method"""
         self.__size = size

@@ -78,6 +78,8 @@ class Square:
         if self.size == 0:
             print("")
         else:
+            for j in range(self.position[1]):
+                print("")
             for row in range(self.size):
                 print(" " * self.position[0], end="")
                 for col in range(self.size):

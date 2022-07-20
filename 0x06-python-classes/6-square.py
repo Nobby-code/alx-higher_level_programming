@@ -51,13 +51,19 @@ class Square:
         if position not a tuple of 2 integere:
             raise TypeError exception with a message
         """
-        if type(value) is tuple and len(value) == 2:
-            if type(value[0]) is not int or value[0] < 0 or\
-                    type(value[1]) is not int or value[1] < 0:
-                raise TypeError("position must be a tuple of two positive\
-                        integers")
-            else:
-                self.__position = value
+        # if type(value) is tuple and len(value) == 2:
+        #     if type(value[0]) is not int or value[0] < 0\
+        #     or type(value[1]) is not int or value[1] < 0:
+        #         raise TypeError with message
+        #     else:
+        #         self.__position = value
+
+        if value is not tuple or len(value) != 2 or\
+                type(value[0]) is not int or value[0] < 0 or\
+                type(value[1]) is not int or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
 
     def area(self):
         """
@@ -68,11 +74,12 @@ class Square:
 
     def my_print(self):
         """printing # in place of a number to the stdout"""
-        for c in range(self.position[1]):
+
+        if self.size == 0:
+            print("")
+        else:
             for row in range(self.size):
-                print(" " * self.position[0], end='')
+                print("_" * self.position[0], end="")
                 for col in range(self.size):
                     print("#", end="")
                 print("")
-        else:
-            print("")

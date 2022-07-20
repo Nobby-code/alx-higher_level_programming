@@ -79,7 +79,7 @@ class Square:
             print("")
         else:
             for row in range(self.size):
-                print("_" * self.position[0], end="")
+                print(" " * self.position[0], end="")
                 for col in range(self.size):
                     print("#", end="")
                 print("")

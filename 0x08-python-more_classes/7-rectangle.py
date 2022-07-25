@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Rectangle class printing #"""
 
 
@@ -61,8 +63,8 @@ class Rectangle:
             return ("")
 
         # using print_symbol
-        hash_value = ((str(self.print_symbol) * self.__width) + "\n") * self.__height
-        return hash_value[:-1]
+        h = ((str(self.print_symbol) * self.__width) + "\n") * self.__height
+        return h[:-1]
 
     # prints unambiguous output
     def __repr__(self):

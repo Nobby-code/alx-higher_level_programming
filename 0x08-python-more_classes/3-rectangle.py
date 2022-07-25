@@ -46,11 +46,11 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return 2 * (self.__width + self.__height)
-    
+
     # using __str__
     def __str__(self):
         """Converting to string format"""
         if self.__width == 0 or self.__height == 0:
-            print("")
+            return ("")
         hash_value = (('#' * self.__width) + "\n") * self.__height
         return hash_value[:-1]

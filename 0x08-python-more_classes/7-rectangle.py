@@ -61,8 +61,8 @@ class Rectangle:
             return ("")
 
         # using print_symbol
-        h = ((str(self.print_symbol) * self.__width) + "\n") * self.__height
-        return h[:-1]
+        hash_value = ((str(self.print_symbol) * self.__width) + "\n") * self.__height
+        return hash_value[:-1]
 
     # prints unambiguous output
     def __repr__(self):

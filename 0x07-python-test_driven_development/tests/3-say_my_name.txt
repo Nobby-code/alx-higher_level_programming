@@ -74,3 +74,11 @@ Test seven
     >>> say_my_name(None, "Norbert")
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
+More than two required arguments
+
+::
+    >>> say_my_name("Norbert", "Oluoch", "Guda") #doctest: +REPORT_NDIFF
+    Traceback (most recent call last):
+	...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given

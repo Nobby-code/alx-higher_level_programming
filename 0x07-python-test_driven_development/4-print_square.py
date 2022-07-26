@@ -2,6 +2,7 @@
 
 """ Print square module """
 
+
 def print_square(size):
     """
     def print_square(size):
@@ -19,7 +20,7 @@ def print_square(size):
         raise ValueError("size must be >= 0")
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
-    
+
     for row in range(size):
         for col in range(size):
             print("#", end="")

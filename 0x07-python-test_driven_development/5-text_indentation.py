@@ -2,6 +2,7 @@
 
 """ String Indentation Function """
 
+
 def text_indentation(text):
 
     """
@@ -27,6 +28,5 @@ def text_indentation(text):
             new_character = new_character + "\n\n"
             print(new_character.strip() + "\n")
             new_character = ""
-            
+
     print(new_character.strip(), end="")
-text_indentation("Hello there. Hope you are fine? Please come home with: sugar and soap")

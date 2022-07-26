@@ -3,11 +3,10 @@ Test file for 5-text_indentation
 =================================
 
 Function importation from 5-text_indentation module
-------------------------------------------------
+----------------------------------------------------
 
-::
-    >>> ttext_indentation = __import__('5-text_indentation').text_indentation
-
+>>> text_indentation = __import__('5-text_indentation').text_indentation #doctest: +REPORT_NDIFF
+    
 Checking docstring moodule
 ::
     >>> __import__('5-text_indentation').__doc__ != None
@@ -20,28 +19,64 @@ Checking docstring for method
 
 Using a none string value
 ::
-    >>> text_indentation(4):
+    >>> text_indentation(4) #doctest: +REPORT_NDIFF
     Traceback (most recent call last):
     TypeError: text must be a string
 
-    >>> text_indentation(True):
+    >>> text_indentation(True)
     Traceback (most recent call last):
-    TypeError: text must be a number
+    TypeError: text must be a string
 
-    >>> text_indentation(None):
+    >>> text_indentation(None)
     Traceback (most recent call last):
-    TypeError: text must be a number
+    TypeError: text must be a string
+
+Using one line string
+::
+    >>> text_indentation("Hello")
+    Hello
+
+Short string
+::
+    >>> text_indentation("Nobby. Guda")
+    Nobby.
+    <BLANKLINE>
+    Guda
 
 Using string
 ::
-    >>> text_indentation("Hello there. Hope you are fine?)
-    Hello there
+    >>> text_indentation("Properties: Pen. Book")
+    Properties:
+    <BLANKLINE>
+    Pen.
+    <BLANKLINE>
+    Book
 
-    Hope you are fine?
+No argument
+::
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
 
-    Please come home with:
+More than one argument
+::
+    >>> text_indentation("nobby", "guda", "oluoch")
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 3 were given
 
-    sugar and soap
+Bolean type
+::
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
 
-    
-
+Only using t = ": . ?"
+::
+    >>> t = ": . ?"
+    >>> text_indentation(t)
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>

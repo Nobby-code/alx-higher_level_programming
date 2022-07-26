@@ -62,10 +62,10 @@ If value NaN and large values
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
 
-    >>> add_integer(4, float('inf))
+    >>> add_integer(4, float('inf'))
     Traceback (most recent call last):
-    OverflowError: cannot convert infinite float number to integer
+    OverflowError: cannot convert float infinity to integer
 
-    >>> add_integer(float('inf'), float('inf'))
+    >>> add_integer(float('inf'), float('inf')) #doctest: +REPORT_NDIFF
     Traceback (most recent call last):
-    OverflowError: cannot convert infinite float number to integer
+    OverflowError: cannot convert float infinity to integer

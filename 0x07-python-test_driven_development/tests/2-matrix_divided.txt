@@ -1,0 +1,68 @@
+# 2-matrix_divided.txt
+
+==================================
+Test file for 2-matrix_divided.py
+==================================
+
+Function importation from 2-matrix_divided module
+--------------------------------------------------
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+Using int div
+
+::
+
+    >>> print(matrix_divided(matrix, 3)) #doctest: +REPORT_NDIFF
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+using negative div
+
+::
+    >>> print(matrix_divided(matrix, -3)) #doctest: +REPORT_NDIFF
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+div == 0 returns ZeroDivisionError
+
+::
+
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+using a non-number div
+
+::
+    >>> print(matrix_divided(matrix, 'x')) #doctest: +REPORT_NDIFF
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+using a single matrix (not a list of lists)
+
+::
+    >>> matrix = [1, 2, 3]
+    >>> print(matrix_divided(matrix, 3)) #doctest: +REPORT_NDIFF
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Using a list of lists which is neither integer nor float
+
+::
+    >>> matrix = [[1, 2, 3], ['a', 'b', 'c']]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Testing rows of different sizes of the list
+
+::
+    >>> matrix = [[1, 2, 3, 4], [1, 2, 3]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last)
+    TypeError: Each row of the matrix must have the same size

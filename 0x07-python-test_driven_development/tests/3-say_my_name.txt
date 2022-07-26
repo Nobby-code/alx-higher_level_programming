@@ -1,0 +1,76 @@
+
+# 3-say_my_name.txt
+
+===============================
+Test file for 3-say_my_name.py
+===============================
+
+Function importation from 3-say_my_name module
+-----------------------------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Checking docstring for module
+
+::
+    >>> __import__('3-say_my_name').__doc__ != None
+    True
+
+Checking docstring for method
+
+::
+    >>> len(say_my_name.__doc__) > 0
+    True
+
+Test one
+
+::
+    >>> say_my_name("Norbert", "Guda")
+    My name is Norbert Guda
+
+Test two
+
+::
+    >>> say_my_name("Norbert") #doctest: +REPORT_NDIFF
+    My name is Norbert 
+
+Test three
+
+::
+    >>> say_my_name(3, "Guda")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Test Four
+
+::
+    >>> say_my_name("Norbert", 3)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Test five
+
+::
+    >>> say_my_name(4, 5) #doctest: +REPORT_NDIFF
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Test six
+
+::
+    >>> say_my_name()
+    Traceback (most recent call last):
+            ...           
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test seven
+
+::
+    >>> say_my_name("Norbert", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None, "Norbert")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

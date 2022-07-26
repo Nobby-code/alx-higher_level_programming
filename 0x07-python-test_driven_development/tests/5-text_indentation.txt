@@ -1,0 +1,47 @@
+=================================
+Test file for 5-text_indentation
+=================================
+
+Function importation from 5-text_indentation module
+------------------------------------------------
+
+::
+    >>> ttext_indentation = __import__('5-text_indentation').text_indentation
+
+Checking docstring moodule
+::
+    >>> __import__('5-text_indentation').__doc__ != None
+    True
+
+Checking docstring for method
+::
+    >>> len(text_indentation.__doc__) > 0
+    True
+
+Using a none string value
+::
+    >>> text_indentation(4):
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(True):
+    Traceback (most recent call last):
+    TypeError: text must be a number
+
+    >>> text_indentation(None):
+    Traceback (most recent call last):
+    TypeError: text must be a number
+
+Using string
+::
+    >>> text_indentation("Hello there. Hope you are fine?)
+    Hello there
+
+    Hope you are fine?
+
+    Please come home with:
+
+    sugar and soap
+
+    
+

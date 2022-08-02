@@ -10,5 +10,5 @@ def read_file(filename=""):
     The file is empty by default
     """
     with open(filename, encoding='utf-8') as f:
-       res = f.read()
-       print(res)
+        res = f.read()
+        print(res, end="")

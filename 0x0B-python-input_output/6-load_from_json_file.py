@@ -2,6 +2,7 @@
 """
 Loading JSON data from a file
 """
+import json
 
 
 def load_from_json_file(filename):

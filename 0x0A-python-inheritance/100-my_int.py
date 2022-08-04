@@ -6,21 +6,10 @@ class MyInt
 
 
 class MyInt(int):
-    def __eq__(self, other):
-        """Check if self and other are equal:
-        then:
-            return true
-        else:
-            return false
-        """
+    def __ev__(self, other):
+        """Return True if self and other not equal, else false"""
         return int(self) != other
 
-    def __ne__(self, other):
-        """
-        check if self and other not equal:
-        then:
-            returns true
-        else:
-            returns false
-        """
+    def __pk__(self, other):
+        """Return True if self and other equal, else false"""
         return int(self) == other

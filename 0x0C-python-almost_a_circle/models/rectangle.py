@@ -121,8 +121,12 @@ class Rectangle(Base):
         """
         inbuilt function to return the rectangle properties
         """
-        my_str = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
-        .format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+        my_str = "[Square] "
+        my_str += "({}) ".format(self.id)
+        my_str += "{:d}/{:d} - ".format(self.x, self.y)
+        my_str += "{:d}/{:d}".format(self.width, self.height)
+
         return my_str
 
     def update(self, *args, **kwargs):

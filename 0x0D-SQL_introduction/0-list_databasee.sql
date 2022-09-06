@@ -1,0 +1,2 @@
+-- ahow databases
+SHOW DATABASES;

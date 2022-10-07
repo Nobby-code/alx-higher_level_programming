@@ -31,8 +31,10 @@ if __name__ == "__main__":
             WHERE states.name LIKE BINARY %s'
     cur.execute(query, (argv[4],))
     result = cur.fetchall()
+    cities = []
     if result:
         for res in result:
-            print(res)
+            cities.append(res[0])
+        print(", ".join(cities))
         cur.close()
         conn.close()

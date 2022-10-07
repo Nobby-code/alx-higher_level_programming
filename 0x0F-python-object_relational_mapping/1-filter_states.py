@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-'''
+"""
 Script that lists all states with a name starting with N from hbtn_0e_0_usa db
 It takes 3 arguments username, passwd, database name
-'''
+"""
 
 
 import MySQLdb
@@ -18,7 +18,7 @@ if __name__ == "__main__":
             db=argv[3]
             )
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name LIKE 'N%'\
+    cur.execute("SELECT * FROM states WHERE states.name LIKE BINARY 'N%'\
             ORDER BY states.id ASC")
     state = cur.fetchall()
     for s in state:

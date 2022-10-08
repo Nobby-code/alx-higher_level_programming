@@ -1,13 +1,7 @@
 #!/usr/bin/python3
 
 """
-Script that changes the name of a State object from the database hbtn_0e_6_usa:
-    Takes 3 arguments:
-        mysql username, mysql password, database name
-    Must use the module SQLAlchemy
-    Must import State and Base from model_state
-    It should connect to a MySQL server running on localhost, port 3306
-    Changes the name of the State where id = 2 to New Mexico
+Deleting all state objects with a name containing letter a
 """
 
 
@@ -28,7 +22,7 @@ if __name__ == "__main__":
     session = Session()
 
     delete_state = session.query(State).filter(State.name.like('%a%'))
-    
+
     for obj in delete_state:
         session.delete(obj)
     session.commit()

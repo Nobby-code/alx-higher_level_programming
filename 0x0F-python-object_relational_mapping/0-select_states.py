@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-'''
+"""
 script that lists all states from hbtn_0e_0_usa database
 script should take 3 arguments: username, password and database name
 
-'''
+"""
 
 
 import MySQLdb

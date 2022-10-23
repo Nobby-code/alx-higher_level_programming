@@ -13,8 +13,8 @@ from requests.auth import HTTPBasicAuth
 import sys
 
 if __name__ == "__main__":
-    name = sys.argv[1]
-    pswd = sys.argv[2]
+    name = str(sys.argv[1])
+    pswd = str(sys.argv[2])
     url = 'https://api.github.com/users/{}'.format(name)
     r = requests.get(url, auth=HTTPBasicAuth(name, pswd))
     print(r.json().get('id'))

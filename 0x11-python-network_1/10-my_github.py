@@ -13,20 +13,14 @@ from requests.auth import HTTPBasicAuth
 import sys
 
 if __name__ == "__main__":
-    '''
-    name = str(sys.argv[1])
+
+    name= str(sys.argv[1])
     pswd = str(sys.argv[2])
-    url = 'https://api.github.com/users/{}'.format(name)
-    r = requests.get(url, auth=HTTPBasicAuth(name, pswd))
-    print(r.json().get('id'))
-    '''
-    user = str(sys.argv[1])
-    pw = str(sys.argv[2])
-    result = requests.get("https://api.github.com/user",
-                          auth=(HTTPBasicAuth(user, pw)))
+    r = requests.get("https://api.github.com/user",
+                          auth=(HTTPBasicAuth(name, pswd)))
 
     try:
-        data = result.json()
+        data = r.json()
         print(data["id"])
     except Exception:
         print("None")

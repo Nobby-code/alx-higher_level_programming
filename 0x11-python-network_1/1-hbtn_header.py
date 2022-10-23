@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-'''script that takes in a url, send a request to the url and displays 
+'''script that takes in a url, send a request to the url and displays
 the value of X-Request-Id variable found on he header'''
 import urllib.request
 import sys

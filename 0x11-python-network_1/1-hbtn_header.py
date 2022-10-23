@@ -1,15 +1,9 @@
 #!/usr/bin/python3
 
-'''POST request with email as a parameter'''
+'''script that takes in a url, send a request to the url and displays
+the value of X-Request-Id variable found on he header'''
 import urllib.request
 import sys
-
-
 if __name__ == "__main__":
-    url = sys.argv[1]
-    params = {'email': sys.argv[2]}
-    data = urllib.parse.urlencode(params).encode('UTF-8')
-    req = urllib.request.Request(sys.argv[1], data)
-    with urllib.request.urlopen(url, data) as resp:
-        html = resp.read()
-        print(html.decode('UTF-8'))
+    with urllib.request.urlopen(sys.argv[1]) as resp:
+        print(resp.headers['X-Request-Id'])
